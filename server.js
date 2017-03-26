@@ -50,6 +50,12 @@ app.get('/about', (req, res) => {
   });
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects', {
+    pageTitle: 'Projects'
+  });
+});
+
 app.use(express.static(__dirname + '/public'));
 
 // app.get('/404', (req, res) => {
