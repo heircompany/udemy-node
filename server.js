@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require(`fs`);
 
+// use local path variable for port, otherwise use port 3000
+const port = process.env.PORT || 3000;
 let app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -70,6 +72,6 @@ app.use(express.static(__dirname + '/public'));
 //   });
 // });
 
-app.listen(3000, () => {
-  console.log('Application Launched on port:3000');
+app.listen(port, () => {
+  console.log(`Application Launched on port:${port}`);
 });
